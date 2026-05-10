@@ -75,4 +75,19 @@ with col2:
     st.plotly_chart(fig_bar, use_container_width=True)
 
 st.subheader("Veri Tablosu")
+st.markdown("---")
+st.subheader("Saatlik Performans (Pie Chart)")
+
+# Saatlik kapanış fiyatı açılıştan yüksekse "Yükseliş", düşükse "Düşüş" olarak etiketliyoruz
+df['Performans'] = ['Yükseliş (Yeşil)' if c > o else 'Düşüş (Kırmızı)' for c, o in zip(df['Close'], df['Open'])]
+performans_dagilimi = df['Performans'].value_counts()
+
+# Pasta grafiğini çizdiriyoruz
+fig_pie = go.Figure(data=[go.Pie(
+    labels=performans_dagilimi.index, 
+    values=performans_dagilimi.values, 
+    hole=.4, # Ortası delik şık bir tasarım (donut chart)
+    marker_colors=['#2ca02c', '#d62728']
+)])
+st.plotly_chart(fig_pie, use_container_width=True)
 st.dataframe(df)
