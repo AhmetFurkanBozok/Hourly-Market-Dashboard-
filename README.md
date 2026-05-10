@@ -19,4 +19,4 @@ This repository contains a Python-based interactive web dashboard built with **S
 
 1. Clone this repository to your local machine:
    ```bash
-   git clone [https://github.com/yourusername/your-repo-name.git](https://github.com/yourusername/your-repo-name.git](https://github.com/AhmetFurkanBozok/Hourly-Market-Dashboard-.git)
+   git clone (https://github.com/AhmetFurkanBozok/Hourly-Market-Dashboard-.git)
